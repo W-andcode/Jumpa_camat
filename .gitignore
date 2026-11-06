@@ -1,0 +1,18 @@
+# Konfigurasi rahasia
+config/database.php
+
+# File upload pengguna
+assets/storage/hero/*
+assets/storage/kontak/*
+!assets/storage/hero/.gitkeep
+!assets/storage/kontak/.gitkeep
+
+# Dump database berisi data asli
+jumpa_camat.sql
+
+# Log & editor
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,188 @@
+/* ================================================================
+   style.css — Design System Global
+   Kecamatan Maron Public Service Portal
+   Diload oleh: login.php (admin) & index.php (publik)
+   Referensi: DESIGN.md
+   ================================================================ */
+
+/* Google Fonts: Public Sans */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap');
+
+/* ================================================================
+   CSS VARIABLES — Design Tokens dari DESIGN.md
+   ================================================================ */
+:root {
+    /* --- Surface --- */
+    --color-surface:                    #fcf9f8;
+    --color-surface-dim:                #dcd9d9;
+    --color-surface-bright:             #fcf9f8;
+    --color-surface-lowest:             #ffffff;
+    --color-surface-low:                #f6f3f2;
+    --color-surface-container:          #f0eded;
+    --color-surface-high:               #eae7e7;
+    --color-surface-highest:            #e5e2e1;
+
+    /* --- On-Surface --- */
+    --color-on-surface:                 #1b1c1c;
+    --color-on-surface-variant:         #41493e;
+    --color-inverse-surface:            #303030;
+    --color-inverse-on-surface:         #f3f0ef;
+
+    /* --- Outline --- */
+    --color-outline:                    #717a6d;
+    --color-outline-variant:            #c0c9bb;
+
+    /* --- Primary (Forest Green) --- */
+    --color-primary:                    #00450d;
+    --color-primary-container:          #1b5e20;
+    --color-on-primary:                 #ffffff;
+    --color-on-primary-container:       #90d689;
+    --color-inverse-primary:            #91d78a;
+    --color-surface-tint:               #2a6b2c;
+    --color-primary-fixed:              #acf4a4;
+    --color-primary-fixed-dim:          #91d78a;
+    --color-on-primary-fixed:           #002203;
+    --color-on-primary-fixed-variant:   #0c5216;
+
+    /* --- Secondary --- */
+    --color-secondary:                  #5d5f5f;
+    --color-secondary-container:        #dcdddd;
+    --color-on-secondary:               #ffffff;
+    --color-on-secondary-container:     #5f6161;
+    --color-secondary-fixed:            #e2e2e2;
+    --color-secondary-fixed-dim:        #c6c6c7;
+    --color-on-secondary-fixed:         #1a1c1c;
+    --color-on-secondary-fixed-variant: #454747;
+
+    /* --- Tertiary --- */
+    --color-tertiary:                   #6b1d3d;
+    --color-tertiary-container:         #883454;
+    --color-on-tertiary:                #ffffff;
+    --color-on-tertiary-container:      #ffaec6;
+    --color-tertiary-fixed:             #ffd9e2;
+    --color-tertiary-fixed-dim:         #ffb1c8;
+    --color-on-tertiary-fixed:          #3e001d;
+    --color-on-tertiary-fixed-variant:  #7a2949;
+
+    /* --- Error --- */
+    --color-error:                      #ba1a1a;
+    --color-error-container:            #ffdad6;
+    --color-on-error:                   #ffffff;
+    --color-on-error-container:         #93000a;
+
+    /* --- Background --- */
+    --color-background:                 #fcf9f8;
+    --color-on-background:              #1b1c1c;
+    --color-surface-variant:            #e5e2e1;
+
+    /* --- Status Semantik (terpisah dari tema) --- */
+    --status-ready-bg:                  #e8f5e9;
+    --status-ready-text:                #2e7d32;
+    --status-ready-border:              #a5d6a7;
+    --status-gangguan-bg:               #ffebee;
+    --status-gangguan-text:             #c62828;
+    --status-gangguan-border:           #ef9a9a;
+    --status-noinfo-bg:                 #f5f5f5;
+    --status-noinfo-text:               #757575;
+    --status-noinfo-border:             #e0e0e0;
+
+    /* --- Typography --- */
+    --font-family:                      'Public Sans', sans-serif;
+
+    /* Font sizes */
+    --fs-headline-lg:                   2rem;        /* 32px */
+    --fs-headline-lg-mobile:            1.75rem;     /* 28px */
+    --fs-headline-md:                   1.5rem;      /* 24px */
+    --fs-body-lg:                       1.125rem;    /* 18px */
+    --fs-body-md:                       1rem;        /* 16px */
+    --fs-label-bold:                    0.875rem;    /* 14px */
+    --fs-label-md:                      0.875rem;    /* 14px */
+
+    /* Font weights */
+    --fw-regular:                       400;
+    --fw-medium:                        500;
+    --fw-semibold:                      600;
+    --fw-bold:                          700;
+
+    /* Line heights */
+    --lh-headline-lg:                   2.5rem;      /* 40px */
+    --lh-headline-md:                   2rem;        /* 32px */
+    --lh-body-lg:                       1.75rem;     /* 28px */
+    --lh-body-md:                       1.5rem;      /* 24px */
+    --lh-label:                         1.25rem;     /* 20px */
+
+    /* --- Spacing --- */
+    --max-width:                        960px;
+    --gutter:                           1rem;        /* 16px */
+    --stack-sm:                         0.5rem;      /* 8px */
+    --stack-md:                         1rem;        /* 16px */
+    --stack-lg:                         2rem;        /* 32px */
+    --margin-mobile:                    1rem;
+    --margin-desktop:                   auto;
+
+    /* --- Shape / Border Radius --- */
+    --radius-sm:                        0.125rem;    /* 2px  */
+    --radius-default:                   0.25rem;     /* 4px  */
+    --radius-md:                        0.375rem;    /* 6px  */
+    --radius-lg:                        0.5rem;      /* 8px  */
+    --radius-xl:                        0.75rem;     /* 12px */
+    --radius-full:                      9999px;
+}
+
+/* ================================================================
+   RESET & BASE GLOBAL
+   ================================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--fs-body-md);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-body-md);
+    color: var(--color-on-surface);
+    background-color: var(--color-background);
+    min-height: 100vh;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--color-primary-container);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ================================================================
+   SKIP LINK — Aksesibilitas (dipakai semua halaman)
+   ================================================================ */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: var(--color-primary-container);
+    color: var(--color-on-primary);
+    padding: var(--stack-sm) var(--stack-md);
+    font-size: var(--fs-label-bold);
+    font-weight: var(--fw-bold);
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    top: 0;
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Katalog layanan</title>
+  <rect x="12" y="7" width="40" height="50" rx="8" fill="#E8F5E9"/>
+  <path d="M22 7h20v10a4 4 0 0 1-4 4H26a4 4 0 0 1-4-4V7Z" fill="#1B5E20"/>
+  <path d="M24 31h16M24 40h16M24 49h10" fill="none" stroke="#1B5E20" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="46" cy="47" r="10" fill="#25D366"/>
+  <path d="m42 47 3 3 6-7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

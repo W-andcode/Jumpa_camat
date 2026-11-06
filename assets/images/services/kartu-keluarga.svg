@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Kartu Keluarga</title>
+  <path d="m7 29 25-20 25 20" fill="#C8E6C9" stroke="#1B5E20" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13 27v27h38V27" fill="#E8F5E9" stroke="#1B5E20" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="32" cy="32" r="6" fill="#1B5E20"/>
+  <circle cx="21" cy="38" r="4.5" fill="#66BB6A"/>
+  <circle cx="43" cy="38" r="4.5" fill="#66BB6A"/>
+  <path d="M21 47c1-5 4.8-8 11-8s10 3 11 8M14 51c.5-5 3-8 7-8M50 51c-.5-5-3-8-7-8" fill="none" stroke="#1B5E20" stroke-width="3" stroke-linecap="round"/>
+</svg>

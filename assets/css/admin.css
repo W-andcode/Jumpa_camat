@@ -1,0 +1,922 @@
+/* ================================================================
+   admin.css — Styling khusus halaman admin
+   Kecamatan Maron Public Service Portal
+   Diload oleh: admin/login.php (dan halaman admin lainnya)
+   Dependensi: assets/css/style.css (harus diload lebih dulu)
+   ================================================================ */
+
+/* ================================================================
+   LAYOUT — Halaman admin berdiri sendiri (full-height centering)
+   ================================================================ */
+.admin-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-surface-low);
+}
+
+/* ================================================================
+   PAGE WRAPPER — Pusatkan konten secara vertikal & horizontal
+   ================================================================ */
+.page-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--stack-lg) var(--gutter);
+}
+
+/* ================================================================
+   LOGIN CARD
+   ================================================================ */
+.login-card {
+    background-color: var(--color-surface-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 440px;
+    padding: var(--stack-lg);
+}
+
+/* ================================================================
+   BRANDING — Logo + Judul dalam card
+   ================================================================ */
+.login-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--stack-sm);
+    margin-bottom: var(--stack-lg);
+    text-align: center;
+}
+
+.login-brand__logo {
+    width: 56px;
+    height: 56px;
+    background-color: var(--color-primary-container);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.login-brand__logo svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: var(--color-on-primary);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.login-brand__title {
+    font-size: var(--fs-headline-md);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-headline-md);
+    color: var(--color-on-surface);
+}
+
+.login-brand__subtitle {
+    font-size: var(--fs-label-bold);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-label);
+    color: var(--color-on-surface-variant);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ================================================================
+   ALERT ERROR
+   ================================================================ */
+.alert-error {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--stack-sm);
+    background-color: var(--color-error-container);
+    border: 1px solid var(--color-error);
+    border-radius: var(--radius-default);
+    padding: var(--stack-md);
+    margin-bottom: var(--stack-md);
+    color: var(--color-on-error-container);
+    font-size: var(--fs-label-bold);
+    font-weight: var(--fw-medium);
+    line-height: 1.4;
+    animation: fadeIn 0.2s ease;
+}
+
+.alert-error svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--color-on-error-container);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-top: 1px;
+}
+
+/* ================================================================
+   FORM
+   ================================================================ */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-sm);
+}
+
+.form-label {
+    font-size: var(--fs-label-bold);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-label);
+    color: var(--color-on-surface);
+    letter-spacing: 0.3px;
+}
+
+.form-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 var(--stack-md);
+    font-family: var(--font-family);
+    font-size: var(--fs-body-md);
+    font-weight: var(--fw-regular);
+    color: var(--color-on-surface);
+    background-color: var(--color-surface-lowest);
+    border: 1px solid var(--color-outline);
+    border-radius: var(--radius-default);
+    outline: none;
+    transition: border-color 0.15s ease, border-width 0.15s ease;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-input::placeholder {
+    color: var(--color-outline);
+}
+
+.form-input:focus {
+    border-color: var(--color-primary-container);
+    border-width: 2px;
+}
+
+/* --- Input wrapper untuk password toggle --- */
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper .form-input {
+    padding-right: 3rem;
+}
+
+/* ================================================================
+   TOGGLE PASSWORD BUTTON
+   ================================================================ */
+.btn-toggle-password {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-outline);
+    transition: color 0.15s ease;
+}
+
+.btn-toggle-password:hover,
+.btn-toggle-password:focus {
+    color: var(--color-primary-container);
+    outline: none;
+}
+
+.btn-toggle-password svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ================================================================
+   BUTTON PRIMARY — Submit login
+   ================================================================ */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--stack-sm);
+    width: 100%;
+    height: 48px;
+    padding: 0 var(--stack-md);
+    font-family: var(--font-family);
+    font-size: var(--fs-body-md);
+    font-weight: var(--fw-bold);
+    color: var(--color-on-primary);
+    background-color: var(--color-primary-container);
+    border: none;
+    border-radius: var(--radius-default);
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: background-color 0.15s ease, opacity 0.15s ease;
+    margin-top: var(--stack-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary);
+}
+
+.btn-primary:focus-visible {
+    outline: 3px solid var(--color-primary-fixed-dim);
+    outline-offset: 2px;
+}
+
+.btn-primary:active {
+    opacity: 0.88;
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ================================================================
+   DIVIDER — Link balik ke halaman publik
+   ================================================================ */
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--stack-md);
+    flex-wrap: wrap;
+    margin-top: var(--stack-lg);
+    padding-top: var(--stack-lg);
+    border-top: 1px solid var(--color-outline-variant);
+}
+
+.login-divider__text {
+    font-size: var(--fs-label-bold);
+    color: var(--color-on-surface-variant);
+}
+
+.login-divider__link {
+    font-size: var(--fs-label-bold);
+    font-weight: var(--fw-medium);
+    color: var(--color-primary-container);
+    text-decoration: none;
+}
+
+.login-divider__link:hover {
+    text-decoration: underline;
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.page-footer {
+    text-align: center;
+    padding: var(--stack-md) var(--gutter);
+    font-size: var(--fs-label-bold);
+    color: var(--color-on-surface-variant);
+}
+
+/* ================================================================
+   DASHBOARD ADMIN STYLING
+   ================================================================ */
+
+/* Header Top Bar */
+.admin-header {
+    background-color: var(--color-surface-lowest);
+    border-bottom: 1px solid var(--color-outline-variant);
+    padding: var(--stack-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.admin-header__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--stack-sm);
+    color: var(--color-on-surface);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-body-lg);
+    text-decoration: none;
+}
+
+.admin-header__brand svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--color-primary-container);
+}
+
+.admin-header__brand:hover {
+    text-decoration: none;
+}
+
+.admin-header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--stack-md);
+}
+
+.admin-user-info {
+    font-size: var(--fs-label-bold);
+    color: var(--color-on-surface-variant);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    font-size: var(--fs-label-bold);
+    font-weight: var(--fw-bold);
+    color: var(--color-error);
+    background: transparent;
+    border: 1px solid var(--color-error);
+    border-radius: var(--radius-default);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: var(--color-error-container);
+    text-decoration: none;
+}
+
+.btn-logout svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Dashboard Content Container */
+.admin-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--stack-lg) var(--gutter);
+    flex: 1;
+    width: 100%;
+}
+
+.dashboard-title {
+    font-size: var(--fs-headline-lg);
+    font-weight: var(--fw-bold);
+    margin-bottom: var(--stack-lg);
+    color: var(--color-on-surface);
+}
+
+/* Dashboard Grid System */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--stack-lg);
+}
+
+@media (min-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Dashboard Card */
+.dashboard-card {
+    background-color: var(--color-surface-lowest);
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-card__header {
+    background-color: var(--color-surface-low);
+    padding: var(--stack-md);
+    border-bottom: 1px solid var(--color-outline-variant);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-card__title {
+    font-size: var(--fs-body-lg);
+    font-weight: var(--fw-bold);
+    color: var(--color-primary-container);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dashboard-card__title svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+}
+
+.dashboard-card__action {
+    font-size: var(--fs-label-bold);
+    padding: 6px 12px;
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary);
+    border-radius: var(--radius-default);
+    text-decoration: none;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dashboard-card__action:hover {
+    background-color: var(--color-primary);
+    text-decoration: none;
+}
+
+.dashboard-card__body {
+    padding: var(--stack-md);
+    flex: 1;
+}
+
+/* Blank State / Empty State */
+.empty-state {
+    text-align: center;
+    padding: var(--stack-lg) 0;
+    color: var(--color-on-surface-variant);
+}
+
+.empty-state svg {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--stack-sm);
+    stroke: var(--color-outline-variant);
+    fill: none;
+    stroke-width: 1.5;
+}
+
+/* Simple List for Dashboard */
+.admin-list {
+    list-style: none;
+}
+
+.admin-list li {
+    padding: var(--stack-sm) 0;
+    border-bottom: 1px solid var(--color-outline-variant);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-list li:last-child {
+    border-bottom: none;
+}
+
+.admin-list__info strong {
+    display: block;
+    color: var(--color-on-surface);
+}
+
+.admin-list__info span {
+    font-size: var(--fs-label-md);
+    color: var(--color-on-surface-variant);
+}
+/* ================================================================
+   ANIMATIONS
+   ================================================================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   ADMIN HEADER BARU
+   ========================================================= */
+
+.admin-header {
+    position: relative;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid var(--color-outline-variant, #d6ddd4);
+}
+
+.admin-header__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    min-height: 70px;
+
+    padding: 0 var(--gutter);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   BRAND ADMIN PANEL
+   ========================================================= */
+
+.admin-header__brand {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--color-on-surface, #111);
+
+    font-size: 19px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
+
+.admin-header__brand:hover {
+    text-decoration: none;
+}
+
+.admin-header__brand svg {
+    flex-shrink: 0;
+
+    color: var(--color-primary-container, #14651f);
+}
+
+
+/* =========================================================
+   USER MENU
+   ========================================================= */
+
+.admin-user-menu {
+    position: relative;
+
+    margin-left: auto;
+}
+
+
+/* BUTTON USER */
+
+.admin-user-button {
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: 1px solid transparent;
+
+    background: transparent;
+
+    color: var(--color-on-surface, #222);
+
+    min-height: 44px;
+
+    padding: 8px 10px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.admin-user-button:hover {
+    background: #f5f7f4;
+
+    border-color: #d9dfd7;
+}
+
+.admin-user-button svg {
+    flex-shrink: 0;
+}
+
+.admin-user-chevron {
+    transition: transform 0.2s ease;
+}
+
+.admin-user-button.active .admin-user-chevron {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DROPDOWN
+   ========================================================= */
+
+.admin-user-dropdown {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    width: 230px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce2da;
+
+    border-radius: 12px;
+
+    padding: 8px;
+
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.14);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 9999;
+}
+
+
+/* Saat terbuka */
+
+.admin-user-dropdown.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+/* PROFILE */
+
+.admin-dropdown-profile {
+    padding: 10px 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.admin-dropdown-label {
+    font-size: 11px;
+
+    color: #737b73;
+}
+
+.admin-dropdown-profile strong {
+    font-size: 14px;
+
+    color: #151915;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* PEMBATAS */
+
+.admin-dropdown-divider {
+    height: 1px;
+
+    margin: 5px 0;
+
+    background: #e7ebe6;
+}
+
+
+/* MENU ITEM */
+
+.admin-dropdown-item {
+    min-height: 42px;
+
+    padding: 9px 11px;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #202520;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.admin-dropdown-item:hover {
+    background: #f2f6f1;
+
+    text-decoration: none;
+}
+
+.admin-dropdown-item svg {
+    flex-shrink: 0;
+
+    color: #176321;
+}
+
+
+/* LOGOUT */
+
+.admin-dropdown-logout {
+    color: #c62828;
+}
+
+.admin-dropdown-logout svg {
+    color: #c62828;
+}
+
+.admin-dropdown-logout:hover {
+    background: #fff0f0;
+
+    color: #b71c1c;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .admin-header__container {
+        min-height: 60px;
+
+        padding: 0 16px;
+
+        gap: 10px;
+    }
+
+
+    /* Admin Panel tetap 1 baris */
+
+    .admin-header__brand {
+        font-size: 18px;
+
+        gap: 8px;
+
+        white-space: nowrap;
+    }
+
+    .admin-header__brand svg {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    /*
+       Di HP nama tidak ditampilkan.
+       Hanya icon user.
+    */
+
+    .admin-user-name {
+        display: none;
+    }
+
+    .admin-user-chevron {
+        display: none;
+    }
+
+
+    .admin-user-button {
+        width: 42px;
+        height: 42px;
+
+        min-height: 42px;
+
+        padding: 0;
+
+        border: 1px solid #d8ded6;
+
+        border-radius: 50%;
+
+        justify-content: center;
+
+        background: #ffffff;
+    }
+
+    .admin-user-button svg:first-child {
+        width: 21px;
+        height: 21px;
+    }
+
+
+    /* Dropdown mobile */
+
+    .admin-user-dropdown {
+        width: 220px;
+
+        right: 0;
+
+        top: calc(100% + 10px);
+    }
+
+
+    /* Main dashboard */
+
+    .admin-container {
+        padding: 24px 16px;
+    }
+
+}
+
+
+/* =========================================================
+   HP KECIL
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .admin-header__container {
+        padding: 0 12px;
+    }
+
+    .admin-header__brand {
+        font-size: 17px;
+    }
+
+    .admin-header__brand svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .admin-user-button {
+        width: 40px;
+        height: 40px;
+    }
+
+}

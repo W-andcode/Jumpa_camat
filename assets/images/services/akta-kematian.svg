@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <path d="M14 6h27l10 10v42H14Z" fill="#F1F4F1" stroke="#1B5E20" stroke-width="2.5" stroke-linejoin="round"/>
+  <title>Akta Kematian</title>
+  <path d="M41 6v11h10" fill="#C8E6C9" stroke="#1B5E20" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="32" cy="32" r="10" fill="#DDE7DE" stroke="#1B5E20" stroke-width="2"/>
+  <path d="M32 25v14M27 30h10" fill="none" stroke="#1B5E20" stroke-width="2.7" stroke-linecap="round"/>
+  <path d="M23 48h18" fill="none" stroke="#5D5F5F" stroke-width="3" stroke-linecap="round"/>
+</svg>
